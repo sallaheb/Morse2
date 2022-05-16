@@ -48,6 +48,7 @@ public class MorseCode {
         this.CodeTranslator.put(" ", " ");
     }
 
+
     public String convertToMorseCode(String string) {
         return string;
     }

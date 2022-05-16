@@ -32,9 +32,7 @@ class MorseCodeTest {
 
     @org.junit.jupiter.api.Test
     void ShouldConvertToEnglishSingleCharacter() {
-
         String result = morseCode.CodeTranslator.inverse().get(".-- ");
-
         assertEquals(result, "W");
     }
 
@@ -46,7 +44,6 @@ class MorseCodeTest {
         for (int i = 0; i < characters.length; i++) {
             result += morseCode.CodeTranslator.inverse().get(characters[i] + " ");
         }
-
         assertEquals(result, "WAR");
     }
 
