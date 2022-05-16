@@ -18,14 +18,14 @@ class MorseCodeTest {
 
     @org.junit.jupiter.api.Test
     public void shouldConvertToMorseCodeMultipleCharacters() {
-
+        //ACT
         String result = "";
         String word = "WAR";
 
-        for (int i = 0; i < word.length(); i++) {
-            Character character = Character.toUpperCase(word.charAt(i));
-            result += morseCode.CodeTranslator.get(character.toString());
-        }
+        // Arrange
+        result = morseCode.convertToMorseCode(word);
+
+        //Assert
 
         assertEquals(result, ".-- .- .-. ");
     }
@@ -38,12 +38,16 @@ class MorseCodeTest {
 
     @org.junit.jupiter.api.Test
     public void ShouldConvertToEnglishMultipleCharacters() {
-        String code = ".-- .- .-. ";
-        String[] characters = code.split(" ");
+
+        //ACT
         String result = "";
-        for (int i = 0; i < characters.length; i++) {
-            result += morseCode.CodeTranslator.inverse().get(characters[i] + " ");
-        }
+        String code = ".-- .- .-.";
+
+        // Arrange
+        result = morseCode.convertToEnglish(code);
+
+        //Assert
+
         assertEquals(result, "WAR");
     }
 

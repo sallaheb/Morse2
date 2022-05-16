@@ -49,12 +49,29 @@ public class MorseCode {
     }
 
 
-    public String convertToMorseCode(String string) {
-        return string;
+    public String convertToMorseCode(String word) {
+        // mapping the key and outputting the value in result
+
+        String result = "";
+
+        for (int i = 0; i < word.length(); i++) {
+            Character character = Character.toUpperCase(word.charAt(i));
+            result += CodeTranslator.get(character.toString());
+
+        }
+
+        return result;
     }
 
-    public String convertToEnglish(String morseCode) {
-        return morseCode;
+    public String convertToEnglish(String code) {
+        // taking the values from bimap and splitting them to allow looping of singular value to match against keys
+        // inverse always the retrieval of keys for the key value pair
+        String[] characters = code.split(" ");
+        String result = "";
+        for (int i = 0; i < characters.length; i++) {
+            result += CodeTranslator.inverse().get(characters[i] + " ");
+        }
+        return result;
     }
 
 }
