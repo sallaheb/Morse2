@@ -59,7 +59,7 @@ public class MorseCode {
             result += CodeTranslator.get(character.toString());
 
         }
-
+        System.out.println(result);
         return result;
     }
 
@@ -71,6 +71,8 @@ public class MorseCode {
         for (int i = 0; i < characters.length; i++) {
             result += CodeTranslator.inverse().get(characters[i] + " ");
         }
+
+        System.out.println(result);
         return result;
     }
 
